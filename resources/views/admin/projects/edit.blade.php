@@ -20,6 +20,19 @@
                             <div class="invalid-feedback">You need to give it a title</div>
                         @enderror
                     </div>
+
+                    {{-- TIPOLOGIA PROGETTO --}}
+
+                    <div class="mb-3">
+                        <label for="type_id" class="form-label">Type</label>
+                        <select name="type_id" class="form-select @error('type_id') is-invalid                           
+                        @enderror" id="type_id">
+                            {{-- ciclo per avere tutte le option --}}
+                            @foreach($types as $type)
+                                <option value="{{$type->id}}" {{$project->type_id === $type->id ? "selected" : ""}}>{{$type->type}}</option>                                               
+                            @endforeach
+                        </select>
+                    </div>
                     
                     {{-- LINGUAGGIO --}}
 

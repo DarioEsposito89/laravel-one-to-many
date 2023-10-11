@@ -11,7 +11,7 @@
         
                 <p class="fs-5 text-center lh-lg text-dark">Clicca e guarda tutti i miei progetti</p>
                 {{-- Bottone per vedere tutti i progetti in tabella --}}
-                <div class="watch-more mt-1 text-center">
+                <div class="mt-1 text-center">
                     <a href="{{route("admin.projects.index")}}" class="btn btn-primary more-button">Watch my projects</a>
                 </div>
             </div>

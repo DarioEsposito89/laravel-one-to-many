@@ -9,8 +9,11 @@
                     Hello, this is my Portfolio
                 </h1>
         
-                <p class="fs-5 text-center lh-lg text-dark">conetent</p>
-                {{-- <a href="{{route("admin.projects.index")}}" class="btn btn-primary btn-lg" type="button">My projects</a> --}}
+                <p class="fs-5 text-center lh-lg text-dark">Clicca e guarda tutti i miei progetti</p>
+                {{-- Bottone per vedere tutti i progetti in tabella --}}
+                <div class="watch-more mt-1 text-center">
+                    <a href="{{route("admin.projects.index")}}" class="btn btn-primary more-button">Watch my projects</a>
+                </div>
             </div>
             <div class="col-12 col-lg-6 text-center">
                 <img src="/img/right-side.svg" class="welcome-svg " alt="">             
@@ -47,11 +50,6 @@
                 </div>
             @endforeach
         </div>
-    </div>
-
-    {{-- Bottone per vedere tutti i progetti in tabella --}}
-    <div class="watch-more mt-3 text-center">
-        <a href="{{route("admin.projects.index")}}" class="btn btn-primary more-button">Watch my projects</a>
     </div>
 </div>
 @endsection

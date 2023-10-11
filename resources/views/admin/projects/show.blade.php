@@ -7,11 +7,22 @@
                 <div class="show-box d-flex flex-column gap-2">
                     <h1 class="display-4">{{$project->title}}</h1>
 
+                    {{-- Immagine --}}
                     <img src="{{asset("storage/" . $project->thumb)}}" alt="" class="">
+
+                    {{-- Tipologia progetto --}}
+                    <p>Type: {{$project->type->type ?? ""}}</p>
+
+                    {{-- Linguaggio --}}
                     <small class="fw-bold">{{implode(",", $project->language )}}</small>
 
+                    {{-- Descrizione --}}
                     <p class="mt-2">{{$project->description}}</p>
+
+                    {{-- Collegamento a GitHub --}}
                     <a href="{{$project->link}}" class="fs-5 text-decoration-none">GitHub</a>
+
+                    {{-- Data di pubblicazione --}}
                     <p>Release: {{$project->release->format("d-m-Y")}}</p>
 
                 </div>

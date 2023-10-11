@@ -38,6 +38,9 @@
                             {{-- Titolo --}}
                             <h5 class="card-title">{{$project->title}}</h5>
 
+                            {{-- Tipologia progetto --}}
+                            <p>Type: {{$project->type->type ?? ""}}</p>
+
                             {{-- Linguaggio --}}
                             <small>{{implode(",", $project->language )}}</small>
 

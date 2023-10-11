@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidationProjectRequest;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
@@ -91,7 +92,10 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id);
 
-        return view("admin.projects.edit", compact("project"));
+        $types = Type::all();
+
+
+        return view("admin.projects.edit", compact("project", "types"));
     }
 
     /**

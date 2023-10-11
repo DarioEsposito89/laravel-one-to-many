@@ -45,7 +45,7 @@
                             <small>{{implode(",", $project->language )}}</small>
 
                             {{-- Bottone per SHOW --}}
-                            <div class="link-container text-center mt-5">
+                            <div class="container text-center mt-5">
                                 <a href="{{route("admin.projects.show", $project->slug)}}" class="btn btn-primary w-25">Detail</a>
                             </div>
                         </div>

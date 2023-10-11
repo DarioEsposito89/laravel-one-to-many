@@ -25,6 +25,7 @@ class Project extends Model
         "slug"
     ];
 
+    // Relazione al model Type
     public function type(){
         $this->belongsTo(Type::class);
     }

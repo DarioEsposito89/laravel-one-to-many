@@ -25,11 +25,20 @@
         <div class="row row-cols-3 g-5 p-2" >
             @foreach ( $projects as $project)
                 <div class="col">
-                    <div class="card proj-card">
+                    <div class="card">
+                        {{-- Immagine card --}}
                         <img src="{{asset("storage/" . $project->thumb)}}" class="card-img-top" alt=".">
+
+                        {{-- Card body --}}
                         <div class="card-body d-flex flex-column">
+
+                            {{-- Titolo --}}
                             <h5 class="card-title">{{$project->title}}</h5>
+
+                            {{-- Linguaggio --}}
                             <small>{{implode(",", $project->language )}}</small>
+
+                            {{-- Bottone per SHOW --}}
                             <div class="link-container text-center mt-5">
                                 <a href="{{route("admin.projects.show", $project->slug)}}" class="btn btn-primary w-25">Detail</a>
                             </div>
@@ -40,6 +49,7 @@
         </div>
     </div>
 
+    {{-- Bottone per vedere tutti i progetti in tabella --}}
     <div class="watch-more mt-3 text-center">
         <a href="{{route("admin.projects.index")}}" class="btn btn-primary more-button">Watch my projects</a>
     </div>

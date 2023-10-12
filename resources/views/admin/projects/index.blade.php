@@ -8,6 +8,7 @@
                     <thead>
                         <tr>
                             <th>Title</th>
+                            <th>Type</th>
                             <th>Language</th>
                             <th>Image</th>
                             <th>Link</th>
@@ -17,12 +18,24 @@
                     <tbody>
                         @foreach ($projects as $specificProject )  
                         <tr>
+                            {{-- TITOLO --}}
                             <td>{{$specificProject->title}}</td>
+
+                            {{-- TIPO PROGETTO --}}
+                            <td>{{$specificProject->type->type ?? ""}}</td>
+
+                            {{-- LINGUAGGIO --}}
                             <td>{{implode(",", $specificProject->language)}}</td>
+
+                            {{-- IMMAGINE --}}
                             <td><img src={{ asset('/storage/' . $specificProject->thumb) }} class="img-thumbnail" style="width: 100px"></td>
+
+                            {{-- LINK --}}
                             <td>{{$specificProject->link}}</td>
+
+                            {{-- BOTTONE DETTAGLI --}}
                             <td>
-                                <a href="{{route("admin.projects.show", $specificProject->slug )}}" class="btn btn-primary btn-lg" type="button">Dettagli</a>
+                                <a href="{{route("admin.projects.show", $specificProject->slug )}}" class="btn btn-primary btn-lg" type="button">DETAIL</a>
                             </td>
                         </tr>
                         @endforeach
